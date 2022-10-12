@@ -23,6 +23,17 @@ func OpenFile(filename string) (*DB, error) {
 	}, nil
 }
 
+// Open a bytes
+func Open(buf []byte) (*DB, error) {
+	db, err := sdb.Open(buf)
+	if err != nil {
+		return nil, err
+	}
+	return &DB{
+		db: db,
+	}, nil
+}
+
 // Indexes lists all index names.
 func (db *DB) Indexes() ([]string, error) {
 	return db.db.Indexes()
