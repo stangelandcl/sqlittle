@@ -7,7 +7,7 @@ import (
 )
 
 func TestColumns(t *testing.T) {
-	db, err := Open("testdata/words.sqlite")
+	db, err := OpenFile("testdata/words.sqlite")
 	require.NoError(t, err)
 	defer db.Close()
 

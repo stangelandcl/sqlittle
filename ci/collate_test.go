@@ -1,3 +1,4 @@
+//go:build ci
 // +build ci
 
 package ci
@@ -5,7 +6,7 @@ package ci
 import (
 	"testing"
 
-	"github.com/alicebob/sqlittle"
+	"github.com/stangelandcl/sqlittle"
 )
 
 func TestCollateRtrim(t *testing.T) {

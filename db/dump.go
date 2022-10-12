@@ -1,5 +1,6 @@
 // dump table and index structure
 // usage: go run dump.go ./../testdata/single.sqlite
+//go:build never
 // +build never
 
 package main
@@ -9,7 +10,7 @@ import (
 	"fmt"
 	"os"
 
-	sdb "github.com/alicebob/sqlittle/db"
+	sdb "github.com/stangelandcl/sqlittle/db"
 )
 
 func main() {

@@ -19,7 +19,7 @@ cross-compilation is much easier. Given the constraints a valid use-case would
 for example be storing app configuration in read-only sqlite files.
 
 ## Docs
-https://godoc.org/github.com/alicebob/sqlittle for the go doc and examples.
+https://godoc.org/github.com/stangelandcl/sqlittle for the go doc and examples.
 
 See [LOWLEVEL.md](LOWLEVEL.md) about the low level reader.
 See [CODE.md](CODE.md) for an overview how the code is structured.
@@ -155,7 +155,7 @@ These statements are supported. Anything else is not:
 import (
 	"database/sql"
 
-	_ "github.com/alicebob/sqlittle/driver"
+	_ "github.com/stangelandcl/sqlittle/driver"
 )
 
 func Albums() {
@@ -169,7 +169,7 @@ func Albums() {
 
 # &c.
 
-[![GoDoc](https://pkg.go.dev/badge/github.com/alicebob/sqlittle)](https://pkg.go.dev/github.com/alicebob/sqlittle)
+[![GoDoc](https://pkg.go.dev/badge/github.com/stangelandcl/sqlittle)](https://pkg.go.dev/github.com/stangelandcl/sqlittle)
 [![Build Status](https://travis-ci.com/alicebob/sqlittle.png?branch=master)](https://travis-ci.com/alicebob/sqlittle)
 
 `make fuzz` uses [go-fuzz](https://github.com/dvyukov/go-fuzz)

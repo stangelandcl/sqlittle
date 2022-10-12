@@ -1,7 +1,7 @@
 package sqlittle
 
 import (
-	sdb "github.com/alicebob/sqlittle/db"
+	sdb "github.com/stangelandcl/sqlittle/db"
 )
 
 // index scan on a rowid table

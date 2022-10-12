@@ -3,12 +3,12 @@ package sqlittle_test
 import (
 	"fmt"
 
-	"github.com/alicebob/sqlittle"
+	"github.com/stangelandcl/sqlittle"
 )
 
 // Basic SELECT
 func ExampleDB_Select() {
-	db, err := sqlittle.Open("./testdata/music.sqlite")
+	db, err := sqlittle.OpenFile("./testdata/music.sqlite")
 	if err != nil {
 		panic(err)
 	}
@@ -39,7 +39,7 @@ func ExampleDB_Select() {
 
 // SELECT in index order
 func ExampleDB_IndexedSelect() {
-	db, err := sqlittle.Open("./testdata/music.sqlite")
+	db, err := sqlittle.OpenFile("./testdata/music.sqlite")
 	if err != nil {
 		panic(err)
 	}
@@ -69,7 +69,7 @@ func ExampleDB_IndexedSelect() {
 }
 
 func ExampleDB_IndexedSelectEq() {
-	db, err := sqlittle.Open("./testdata/music.sqlite")
+	db, err := sqlittle.OpenFile("./testdata/music.sqlite")
 	if err != nil {
 		panic(err)
 	}
@@ -96,7 +96,7 @@ func ExampleDB_IndexedSelectEq() {
 
 // SELECT a primary key
 func ExampleDB_PKSelect() {
-	db, err := sqlittle.Open("./testdata/music.sqlite")
+	db, err := sqlittle.OpenFile("./testdata/music.sqlite")
 	if err != nil {
 		panic(err)
 	}

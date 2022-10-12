@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	sdb "github.com/alicebob/sqlittle/db"
+	sdb "github.com/stangelandcl/sqlittle/db"
 )
 
 type DB struct {
@@ -13,7 +13,7 @@ type DB struct {
 
 // Open a sqlite file. It can be concurrently written to by SQLite in other
 // processes.
-func Open(filename string) (*DB, error) {
+func OpenFile(filename string) (*DB, error) {
 	db, err := sdb.OpenFile(filename)
 	if err != nil {
 		return nil, err
@@ -21,6 +21,21 @@ func Open(filename string) (*DB, error) {
 	return &DB{
 		db: db,
 	}, nil
+}
+
+// Indexes lists all index names.
+func (db *DB) Indexes() ([]string, error) {
+	return db.db.Indexes()
+}
+
+// Tables lists all table names. Also sqlite internal ones.
+func (db *DB) Tables() ([]string, error) {
+	return db.db.Tables()
+}
+
+// Schema gives the definition of a table and all associated indexes.
+func (db *DB) Schema(table string) (*sdb.Schema, error) {
+	return db.db.Schema(table)
 }
 
 // Close the database file

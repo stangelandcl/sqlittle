@@ -1,3 +1,4 @@
+//go:build ci
 // +build ci
 
 package ci
@@ -6,8 +7,8 @@ import (
 	"reflect"
 	"testing"
 
-	sdb "github.com/alicebob/sqlittle/db"
-	"github.com/alicebob/sqlittle/sql"
+	sdb "github.com/stangelandcl/sqlittle/db"
+	"github.com/stangelandcl/sqlittle/sql"
 )
 
 // table definitions are read and changes are picked up

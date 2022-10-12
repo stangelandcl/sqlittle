@@ -1,3 +1,4 @@
+//go:build ci
 // +build ci
 
 package ci
@@ -6,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/alicebob/sqlittle"
+	"github.com/stangelandcl/sqlittle"
 )
 
 func TestExprCol(t *testing.T) {

@@ -15,7 +15,7 @@ func init() {
 }
 
 func TestIndexedSelectRowid(t *testing.T) {
-	db, err := Open("testdata/words.sqlite")
+	db, err := OpenFile("testdata/words.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -45,7 +45,7 @@ func TestIndexedSelectRowid(t *testing.T) {
 }
 
 func TestIndexedSelectWithoutRowid(t *testing.T) {
-	db, err := Open("testdata/music.sqlite")
+	db, err := OpenFile("testdata/music.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -77,7 +77,7 @@ func TestIndexedSelectWithoutRowid(t *testing.T) {
 }
 
 func TestIndexedSelectEq(t *testing.T) {
-	db, err := Open("testdata/music.sqlite")
+	db, err := OpenFile("testdata/music.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -98,7 +98,7 @@ func TestIndexedSelectEq(t *testing.T) {
 }
 
 func TestIndexedSelectEqNonRowid(t *testing.T) {
-	db, err := Open("testdata/music.sqlite")
+	db, err := OpenFile("testdata/music.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -120,7 +120,7 @@ func TestIndexedSelectEqNonRowid(t *testing.T) {
 
 func TestIndexedSelectDesc(t *testing.T) {
 	// DESC column should be automatically detected
-	db, err := Open("testdata/prefix.sqlite")
+	db, err := OpenFile("testdata/prefix.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -148,7 +148,7 @@ func TestIndexedSelectDesc(t *testing.T) {
 
 func TestIndexedSelectExprWhere(t *testing.T) {
 	// index with a WHERE expression
-	db, err := Open("testdata/expr.sqlite")
+	db, err := OpenFile("testdata/expr.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -178,7 +178,7 @@ func TestIndexedSelectExprWhere(t *testing.T) {
 
 func TestIndexedSelectExprCol(t *testing.T) {
 	// index with an expression column
-	db, err := Open("testdata/expr.sqlite")
+	db, err := OpenFile("testdata/expr.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}

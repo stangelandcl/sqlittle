@@ -74,6 +74,13 @@ func OpenFile(f string) (*Database, error) {
 	return newDatabase(l, f+"-journal")
 }
 
+// OpenFile opens a .sqlite file. This is the main entry point.
+// Use database.Close() when done.
+func Open(b []byte) (*Database, error) {
+	l := newBufferPager(b)
+	return newDatabase(l, "")
+}
+
 func newDatabase(l pager, journal string) (*Database, error) {
 	d := &Database{
 		journal:    journal,

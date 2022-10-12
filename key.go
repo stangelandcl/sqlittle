@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	sdb "github.com/alicebob/sqlittle/db"
-	"github.com/alicebob/sqlittle/sql"
+	sdb "github.com/stangelandcl/sqlittle/db"
+	"github.com/stangelandcl/sqlittle/sql"
 )
 
 // Key is used to find a record.

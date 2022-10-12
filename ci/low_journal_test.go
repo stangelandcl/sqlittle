@@ -1,3 +1,4 @@
+//go:build ci
 // +build ci
 
 package ci
@@ -7,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	sdb "github.com/alicebob/sqlittle/db"
+	sdb "github.com/stangelandcl/sqlittle/db"
 )
 
 func TestJournal(t *testing.T) {

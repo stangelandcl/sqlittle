@@ -10,7 +10,7 @@ import (
 )
 
 func TestSelectCols(t *testing.T) {
-	db, err := Open("testdata/words.sqlite")
+	db, err := OpenFile("testdata/words.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -22,7 +22,7 @@ func TestSelectCols(t *testing.T) {
 }
 
 func TestSelectSimple(t *testing.T) {
-	db, err := Open("testdata/words.sqlite")
+	db, err := OpenFile("testdata/words.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -52,7 +52,7 @@ func TestSelectSimple(t *testing.T) {
 }
 
 func TestSelectWithoutRowid(t *testing.T) {
-	db, err := Open("testdata/withoutrowid.sqlite")
+	db, err := OpenFile("testdata/withoutrowid.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -85,7 +85,7 @@ func TestSelectWithoutRowid(t *testing.T) {
 func TestSelectAlter(t *testing.T) {
 	// table has a column added with a DEFAULT. These values won't be present
 	// in the Row values.
-	db, err := Open("testdata/alter.sqlite")
+	db, err := OpenFile("testdata/alter.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -112,7 +112,7 @@ func TestSelectAlter(t *testing.T) {
 
 func TestSelectRowidColumn(t *testing.T) {
 	// column which is an alias for the rowid
-	db, err := Open("testdata/music.sqlite")
+	db, err := OpenFile("testdata/music.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -136,7 +136,7 @@ func TestSelectRowidColumn(t *testing.T) {
 
 func TestSelectColumnRowid(t *testing.T) {
 	// special column named "rowid"
-	db, err := Open("testdata/words.sqlite")
+	db, err := OpenFile("testdata/words.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -160,7 +160,7 @@ func TestSelectColumnRowid(t *testing.T) {
 
 func TestSelectFunky(t *testing.T) {
 	// funkykey has columns in a different order than the definition
-	db, err := Open("testdata/funkykey.sqlite")
+	db, err := OpenFile("testdata/funkykey.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -189,7 +189,7 @@ func TestSelectFunky(t *testing.T) {
 }
 
 func TestSelectRowid(t *testing.T) {
-	db, err := Open("testdata/words.sqlite")
+	db, err := OpenFile("testdata/words.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -213,7 +213,7 @@ func TestSelectRowid(t *testing.T) {
 }
 
 func TestSelectRowidNonRowid(t *testing.T) {
-	db, err := Open("testdata/withoutrowid.sqlite")
+	db, err := OpenFile("testdata/withoutrowid.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -226,7 +226,7 @@ func TestSelectRowidNonRowid(t *testing.T) {
 }
 
 func TestPKSelectNoPK(t *testing.T) {
-	db, err := Open("testdata/single.sqlite")
+	db, err := OpenFile("testdata/single.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -238,7 +238,7 @@ func TestPKSelectNoPK(t *testing.T) {
 }
 
 func TestPKSelect(t *testing.T) {
-	db, err := Open("testdata/primarykey.sqlite")
+	db, err := OpenFile("testdata/primarykey.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -259,7 +259,7 @@ func TestPKSelect(t *testing.T) {
 
 func TestPKSelectRowid(t *testing.T) {
 	// PK is a rowid alias
-	db, err := Open("testdata/music.sqlite")
+	db, err := OpenFile("testdata/music.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -281,7 +281,7 @@ func TestPKSelectRowid(t *testing.T) {
 
 func TestPKSelectNonRowid(t *testing.T) {
 	// PKSelect() on a non-rowid table
-	db, err := Open("testdata/funkykey.sqlite")
+	db, err := OpenFile("testdata/funkykey.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -302,7 +302,7 @@ func TestPKSelectNonRowid(t *testing.T) {
 }
 
 func TestSelectOverflow(t *testing.T) {
-	db, err := Open("testdata/page_overflow.sqlite")
+	db, err := OpenFile("testdata/page_overflow.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -312,7 +312,7 @@ func TestSelectOverflow(t *testing.T) {
 }
 
 func TestSelectDone(t *testing.T) {
-	db, err := Open("testdata/words.sqlite")
+	db, err := OpenFile("testdata/words.sqlite")
 	if err != nil {
 		t.Fatal(err)
 	}

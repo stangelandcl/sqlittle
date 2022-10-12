@@ -1,3 +1,4 @@
+//go:build ci
 // +build ci
 
 package ci
@@ -12,9 +13,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/alicebob/sqlittle"
 	"github.com/andreyvit/diff"
 	"github.com/davecgh/go-spew/spew"
+	"github.com/stangelandcl/sqlittle"
 )
 
 func tmpfile(t *testing.T) (string, func()) {

@@ -1,4 +1,6 @@
+//go:build ci
 // +build ci
+
 // Tests against some database files found in the wild
 
 package ci
@@ -8,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/alicebob/sqlittle"
+	"github.com/stangelandcl/sqlittle"
 )
 
 func TestNorthwind(t *testing.T) {
